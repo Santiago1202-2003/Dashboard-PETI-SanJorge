@@ -30,13 +30,14 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # =======================
-# BARRA LATERAL
+# BARRA LATERAL (FIXED: Imagenes comentadas para asegurar carga)
 # =======================
-# Nota: La imagen 'imagenes/logo_sanjorge.png' debe existir en tu proyecto
-try:
-    st.sidebar.image("imagenes/logo_sanjorge.png", use_container_width=True)
-except:
-    st.sidebar.title("Logo San Jorge")
+# Nota: La imagen 'imagenes/logo_sanjorge.png' causaba error FileNotFoundError.
+# Se comenta el bloque para garantizar la carga.
+# try:
+#     st.sidebar.image("imagenes/logo_sanjorge.png", use_container_width=True)
+# except:
+st.sidebar.title("DROGUERIAS SAN JORGE") # Título de reemplazo
     
 st.sidebar.title("Panel de Control PETI")
 st.sidebar.markdown("---")
@@ -105,16 +106,17 @@ bsc_ti = pd.DataFrame({
 
 
 # ==============================================================================
-# VISTA: INICIO
+# VISTA: INICIO (FIXED: Imagen de portada comentada)
 # ==============================================================================
 if view == "Inicio":
     st.title("Dashboard PETI - Droguerias San Jorge")
     st.markdown("### Plan Estrategico de Tecnologias de la Informacion (2025 - 2027)")
-    # Nota: La imagen 'imagenes/portada_sanjorge.png' debe existir en tu proyecto
-    try:
-        st.image("imagenes/portada_sanjorge.png", use_container_width=True)
-    except:
-        st.write("Placeholder para Portada")
+    
+    # Se comenta temporalmente para evitar el error FileNotFoundError en el servidor.
+    # try:
+    #     st.image("imagenes/portada_sanjorge.png", use_container_width=True)
+    # except:
+    st.write("Visualizacion de portada PETI (Imagen Desactivada para asegurar la carga)")
         
     st.markdown("""
     Este panel resume los **proyectos estrategicos de TI**, los **indicadores clave (KPI)** y el **Balance Scorecard**
